@@ -12,10 +12,17 @@ webapp_reactjs_expressjs/
 │   ├── package.json
 │   └── src/
 │       └── server.js
+├── e2e/
+│   ├── package.json
+│   ├── playwright.config.js
+│   └── tests/
+│       └── app.spec.js
 ├── frontend/
+│   ├── index.html
 │   ├── package.json
 │   └── src/
-│       └── App.jsx
+│       ├── App.jsx
+│       └── main.jsx
 └── README.md
 ```
 
@@ -36,3 +43,18 @@ cd frontend
 npm install
 npm run build
 ```
+
+The frontend is built into `frontend/dist/` and served as static files by the backend.
+
+## How to run E2E tests
+
+First build the frontend, then run Playwright from the `e2e/` directory:
+
+```bash
+cd frontend && npm run build && cd -
+cd e2e
+npm install
+npx playwright install chromium
+npm test
+```
+
