@@ -10,8 +10,11 @@ app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'UP' });
 });
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Backend listening on port ${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`Backend listening on port ${port}`);
+  });
+}
 
+module.exports = app;
