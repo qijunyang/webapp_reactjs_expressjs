@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "esbuild src/main.jsx --bundle --outfile=dist/app.js --jsx=automatic && cp index.html dist/index.html"
+    "build": "esbuild src/main.jsx --bundle --format=iife --outfile=dist/app.js --jsx=automatic && cp index.html dist/index.html"
   },
   "dependencies": {
     "react": "18.3.1",
